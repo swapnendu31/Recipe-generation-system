@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Recipe Generation</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+</head>
+
+<body style="background-image: url('static/images/back.jpg');">
+    <div class="container">
+        <div class="left-panel" style="background-image: url('static/images/image.jpeg');">
+            <h2>Vegetable Desk</h2>
+            <p style="color: #ffffff;background-color: #00000029;padding: 8px;margin-bottom: 8px; border-radius: 20px;">Upload a photo to detect vegetables and get recipes!</p>
+
+            <div class="search-container">
+                <div class="search-input" id="search-input">
+                    <div class="tag-container" id="tag-container"></div>
+                    <input type="text" id="tag-input" placeholder="Type vegetable..." oninput="showSuggestions()">
+                    <button class="icon-button" onclick="document.getElementById('upload-photo').click()" title="Upload or Take Photo">
+                        <i class="fa fa-camera" style="font-size:24px"></i>
+                    </button>
+                </div>
+                <input type="file" id="upload-photo" class="file-input" accept="image/*">
+                <div id="suggestions-container" class="suggestions"></div>
+            </div>
+            <div id="slide_lag">
+                <div class="available-tags" id="available-tags"></div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h1>Recipes</h1>
+            <div class="recipe-list" id="recipe-list"></div>
+        </div>
+    </div>
+
+    <div id="instruction-panel" class="instruction-panel" style="background-image: url(static/images/instruct.avif);">
+        <button class="back-button" onclick="goBack()">Back to Recipes</button>
+        <div id="recipe">
+            <h2 id="recipe-name"></h2>
+            <p id="recipe-instructions"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='js/script.js') }}"></script>
+</body>
+
+</html>

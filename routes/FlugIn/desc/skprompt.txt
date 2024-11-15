@@ -1,0 +1,6 @@
+Gives a short description of every recipe in 7-10 words in array 
+Instruction:['Rase Wale Aloo Recipe (Boiled Potato in Tangy Tomato Sauce)', 'Chotti Aloor Dum Recipe - Baby Potatoes In Tomato Gravy', 'Sali Par Eedu Recipe - Parsi Breakfast Eggs On Fried Potato'] short description of every recipe in this array in 7 - 10 words.
+
+['Boiled potatoes in tangy tomato sauce, flavorful and spicy.','Baby potatoes cooked in spiced tomato gravy, comforting dish.','Parsi breakfast with eggs on crispy fried potatoes.']
+
+Instruction:{{$input}} short description of every recipe in this array in 7 - 10 words.

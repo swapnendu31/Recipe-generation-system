@@ -1,0 +1,11 @@
+Generate a creative and narrative way to convert this para into points based cooking steps and don't generate any ingredients name, only the steps to make it.
+To begin making the Rase Wale Aloo recipe, in a heavy bottomed pan heat oil and temper the jeera and hing.Add tomato puree and cook till all the moisture reduces. Add all the masalas and sugar. Cook for another 30 seconds.Add the potatoes and add 1 glass water (250ml) and let it cook and reduce further to a thick consistency.Mash some of the potatoes in the gravy to get that typical rase wale aloo.\xa0Serve Rase Wale Aloo along with\xa0Puri\xa0or\xa0Pudina Tawa Paratha\xa0for lunch or dinner.
+
+1. In a heavy-bottomed pan, heat oil and temper with cumin seeds (jeera) and asafoetida (hing).
+2. Add tomato puree and cook until all the moisture reduces.
+3. Add all the spices and a bit of sugar, then cook for another 30 seconds.
+4. Add the potatoes and 1 glass of water (250ml), letting the mixture cook until it reaches a thick consistency.
+5. Mash some of the potatoes in the gravy to get the typical "rase wale aloo" texture.
+6. Serve the Rase Wale Aloo with Puri or Pudina Tawa Paratha for lunch or dinner.
+
+Generate steps {{$input}}

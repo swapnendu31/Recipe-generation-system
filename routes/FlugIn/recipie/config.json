@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "description": "Convert the give into step of cooking food. keep them in narrative way and in bullet point",
+  "execution_settings": {
+    "default": {
+      "max_tokens": 300,
+      "temperature": 0.3,
+      "top_p": 0.6,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0
+    }
+  }
+}
