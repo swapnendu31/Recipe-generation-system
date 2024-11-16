@@ -83,7 +83,7 @@ async function searchVegetable(query) {
 // Display the recipes on the front-end
 // Display the recipes on the front-end
 function displayRecipes(recipes) {
-    console.log('Recipes:', recipes);  // Log the recipes to check the structure
+    console.log('Recipes:', typeof(recipes));  // Log the recipes to check the structure
     recipeList.innerHTML = ''; // Clear previous recipes
     if (recipes.length === 0) {
         recipeList.innerHTML = 'No recipes found for these vegetables.';
@@ -93,6 +93,7 @@ function displayRecipes(recipes) {
     recipes.forEach(recipe => {
         const recipeItem = document.createElement('div');
         recipeItem.classList.add('recipe-item');
+        console.log('log1 ',recipe)
         recipeItem.onclick = () => showRecipeInstructions(recipe);
         recipeItem.innerHTML = `
             <div id="item_name_box">
@@ -102,7 +103,7 @@ function displayRecipes(recipes) {
             </div>
             <div id="cal_box">
                 <p><strong>Cuisine:</strong> ${recipe.cuisine}</p>
-                <p><strong>Calories:</strong> ${recipe.calories} kcal</p>
+                <p><strong>Total Cooking Time :</strong> ${recipe.calories} Mins</p>
             </div>
         `;
         recipeList.appendChild(recipeItem);
@@ -112,10 +113,10 @@ function displayRecipes(recipes) {
 
 // Show the instructions for a recipe
 async function showRecipeInstructions(recipe) {
-    console.log('Fetching instructions for:', recipe.name);
+    console.log('Fetching instructions for:', recipe.main_name);
     
     // Call the backend to fetch instructions
-    const response = await fetch(`/return_inst/?recipe_name=${encodeURIComponent(recipe.name)}`);
+    const response = await fetch(`/return_inst/?recipe_name=${encodeURIComponent(recipe.main_name)}`);
     const data = await response.json();
     
     if (response.ok) {

@@ -34,7 +34,9 @@ async def return_ins(re: str):
     return description
 
 async def get_recipe_instruction(recipe_text):
-    description = await return_ins(recipe_text)
+    df = pd.read_csv('data/modified_final.csv')
+    ins = df[df['RecipeName']==recipe_text]['Instructions']
+    description = await return_ins(ins)
     return str(description)
 
 
@@ -46,6 +48,9 @@ async def recipe_dict(li:str,item:str):
     li_re = []
     print("strt ",li)
     desk = await get_recipe_description(li)
+    print(desk)
+    if desk == 'No recipes provided':
+        return desk
     desk = ast.literal_eval(desk)
     print(desk)
     for i,j in zip(li,desk):
@@ -57,7 +62,8 @@ async def recipe_dict(li:str,item:str):
         cleaned_name = re.sub(r"\(.*?\)", "", name).strip()
         dt['name'] = cleaned_name
         dt['description'] = j
-        # dt['instruction'] = await get_recipe_instruction(i)
+        dt['main_name'] = i
+        print("ajj",type(i))
         dt['tags'] = ''.join(df[df['RecipeName']==i]['Vegetables']).split(',')
         dt['calories']=list(df[df['RecipeName']==i]['TotalTimeInMins'])[0]
         dt['cuisine'] = list(df[df['RecipeName']==i]['Cuisine'])[0]
@@ -66,11 +72,12 @@ async def recipe_dict(li:str,item:str):
     return re_dict
 
 
-# start =  datetime.now()
-# print("start time : ",start)
+start =  datetime.now()
+print("start time : ",start)
+
 # df = pd.read_csv('data/modified_final.csv')
 # recipe_text =  [['Rase Wale Aloo Recipe (Boiled Potato in Tangy Tomato Sauce)', 'Chotti Aloor Dum Recipe - Baby Potatoes In Tomato Gravy', 'Sali Par Eedu Recipe - Parsi Breakfast Eggs On Fried Potato']]
 # description = recipe_dict(recipe_text,'tomato,potato')
 # print(description)
-# end = datetime.now()
-# print("end time : ",end)
+end = datetime.now()
+print("end time : ",end)

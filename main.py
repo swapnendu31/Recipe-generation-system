@@ -54,7 +54,10 @@ async def search_vegetable(query: str):
     print(query)
     search_re = get_exact_recipes(veg)
     print(search_re)
-    print("")
+    print("this is here : ", len(search_re))
+    if len(search_re) == 1:
+        non = {'recipes' : []}
+        return non
     dict_re = await recipe_dict(search_re,query)
     print(dict_re)
 
@@ -72,61 +75,20 @@ async def search_vegetable(query: str):
 
 
 
+# Define a function to return recipe instructions by recipe name
+@app.get("/return_inst/")
+async def return_inst(recipe_name:str):
+    print("as",recipe_name)
+    instuctions = ''
+    instuctions  = await get_recipe_instruction(recipe_name)
+    print(instuctions)
+    # recipe = next((r for r in recipes if r["name"].lower() == recipe_name.lower()), None)
+    
+    if instuctions :
+        return JSONResponse(content={"instructions": instuctions })
+    else:
+        return JSONResponse(content={"instructions": "No instructions found for this recipe."}, status_code=404)
 
 
 
 
-
-
-
-# from fastapi import FastAPI
-# from fastapi.staticfiles import StaticFiles
-# from fastapi.templating import Jinja2Templates
-# from pathlib import Path
-# from fastapi.responses import JSONResponse
-# from fastapi import Request
-
-# app = FastAPI()
-
-# # Serving static files
-# app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
-
-# # Rendering HTML templates
-# templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
-
-# # Example recipes data
-# recipes = {
-#     'tomato': [{
-#         'name': 'Tomato Soup',
-#         'description': 'A warm soup made with fresh tomatoes.',
-#         'tags': ['tomato', 'soup'],
-#         'cuisine': 'North',
-#         'calories': 120,
-#         'instructions': '1. Blend tomatoes. 2. Cook with spices.'
-#     }],
-#     'potato-tomato': [{
-#         'name': 'Potato Fries',
-#         'description': 'Crispy fried potato fries.',
-#         'tags': ['potato', 'fries'],
-#         'cuisine': 'Western',
-#         'calories': 250,
-#         'instructions': '1. Cut potatoes. 2. Fry with oil.'
-#     }],
-# }
-
-# @app.get("/")
-# async def index(request: Request):
-#     return templates.TemplateResponse("main.html", {"request": request})
-
-# @app.get("/search/")
-# async def search_vegetable(query: str):
-#     print(query)
-#     vegetables = query.split(',')
-#     print(vegetables)
-#     matched_recipes = []
-#     for vegetable in vegetables:
-#         vegetable = vegetable.strip()
-#         print(vegetable)  # Clean up any extra spaces
-#         if vegetable in recipes:
-#             matched_recipes.extend(recipes[vegetable])
-#     return JSONResponse(content={"recipes": matched_recipes})
