@@ -37,7 +37,15 @@ async def get_recipe_instruction(recipe_text):
     df = pd.read_csv('data/modified_final.csv')
     ins = df[df['RecipeName']==recipe_text]['Instructions']
     description = await return_ins(ins)
-    return str(description)
+    abs = {}
+    abs['instructions']=str(description)
+    abs['serve'] = list(df[df['RecipeName']==recipe_text]['Servings'])[0]
+    abs['preptime'] = list(df[df['RecipeName']==recipe_text]['TotalTimeInMins'])[0]
+    abs['ingredients'] = list(df[df['RecipeName']==recipe_text]['Ingredients'])[0]
+    abs['diet'] = list(df[df['RecipeName']==recipe_text]['Diet'])[0]
+
+
+    return abs
 
 
 async def recipe_dict(li:str,item:str):

@@ -55,7 +55,7 @@ async def search_vegetable(query: str):
     search_re = get_exact_recipes(veg)
     print(search_re)
     print("this is here : ", len(search_re))
-    if len(search_re) == 1:
+    if len(search_re[0]) == 0:
         non = {'recipes' : []}
         return non
     dict_re = await recipe_dict(search_re,query)
@@ -81,7 +81,7 @@ async def return_inst(recipe_name:str):
     print("as",recipe_name)
     instuctions = ''
     instuctions  = await get_recipe_instruction(recipe_name)
-    print(instuctions)
+    print("iuns ",instuctions)
     # recipe = next((r for r in recipes if r["name"].lower() == recipe_name.lower()), None)
     
     if instuctions :

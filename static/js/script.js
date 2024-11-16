@@ -71,12 +71,22 @@ function showSuggestions() {
 
 // Fetch recipes based on the search tags
 async function searchVegetable(query) {
-    if (query) {
+    if (!query) {
+        // Clear the recipe list if the query is empty
+        recipeList.innerHTML = 'No recipes found. Please select a vegetable to search.';
+        return;
+    }
+
+    try {
+        // Fetch recipes based on the query
         const response = await fetch(`/search/?query=${query}`);
         const data = await response.json();
-        console.log(data);
-        // Display the recipes on the front-end
+
+        // Display the fetched recipes
         displayRecipes(data.recipes);
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+        recipeList.innerHTML = 'An error occurred while fetching recipes. Please try again later.';
     }
 }
 
@@ -117,15 +127,19 @@ async function showRecipeInstructions(recipe) {
     
     // Call the backend to fetch instructions
     const response = await fetch(`/return_inst/?recipe_name=${encodeURIComponent(recipe.main_name)}`);
-    const data = await response.json();
+    const data1 = await response.json();
     
     if (response.ok) {
+        data = data1.instructions
         const instructions = data.instructions;
-        
+        const predtim = data.predtime
         document.getElementById('recipe-name').textContent = recipe.name;
-        
+        document.getElementById('preptime').innerHTML =`<strong>Cooking Duration :</strong> ${data.preptime} Mins`;
+        document.getElementById('serve').innerHTML  = `<strong>Serves :</strong> ${data.serve}`;
+        document.getElementById('diet').innerHTML  = `<strong>Diet Type :</strong> ${data.diet}`;
+        document.getElementById('ingredients').innerHTML  = `<strong>Ingredients :</strong> ${data.ingredients}`;
         // Check if instructions are in the correct format and display them
-        document.getElementById('recipe-instructions').innerHTML = instructions.replace(/\n/g, '<br>');
+        document.getElementById('recipe-instructions').innerHTML = `<br><strong>Instructions :</strong><br>${instructions.replace(/\n/g, '<br>')}`;
     } else {
         document.getElementById('recipe-name').textContent = 'Recipe not found';
         document.getElementById('recipe-instructions').textContent = 'No instructions available.';
