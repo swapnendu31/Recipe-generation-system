@@ -4,3 +4,6 @@ pandas==2.2.3
 semantic_kernel==1.15.0
 torch==2.4.1
 transformers==4.45.2
+uvicorn==0.23.0
+gunicorn==21.2.0
+requests==2.31.0
