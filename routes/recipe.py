@@ -54,16 +54,16 @@ async def recipe_dict(li:str,item:str):
     re_dict = {}
     item = '-'.join(item.split(','))
     li_re = []
-    print("strt ",li)
+    # print("strt ",li)
     desk = await get_recipe_description(li)
-    print(desk)
+    # print(desk)
     if desk == 'No recipes provided':
         return desk
     desk = ast.literal_eval(desk)
-    print(desk)
+    # print(desk)
     for i,j in zip(li,desk):
         dt = {}
-        print(j)
+        # print(j)
         name = i.split("Recipe")[0].strip()
         name = name.replace('Recipe','')
         name = name.replace('-','')
@@ -71,7 +71,7 @@ async def recipe_dict(li:str,item:str):
         dt['name'] = cleaned_name
         dt['description'] = j
         dt['main_name'] = i
-        print("ajj",type(i))
+        # print("ajj",type(i))
         dt['tags'] = ''.join(df[df['RecipeName']==i]['Vegetables']).split(',')
         dt['calories']=list(df[df['RecipeName']==i]['TotalTimeInMins'])[0]
         dt['cuisine'] = list(df[df['RecipeName']==i]['Cuisine'])[0]

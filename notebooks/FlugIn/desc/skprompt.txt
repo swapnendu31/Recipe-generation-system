@@ -1,4 +1,0 @@
-Gives a short description of recipe in 10 - 13 words
-Instruction:Tomato Soup short description in 10 - 13 words.
-A warm soup made with fresh tomatoes.
-Instruction:{{$input}} short description in 10 - 13 words.
