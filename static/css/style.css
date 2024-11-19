@@ -37,6 +37,8 @@ body {
     overflow-y: auto;
     background-image: url('static/images/image.jpeg');
     padding-right: 29px;
+    min-width: 29%;
+    max-width: 29%;
 }
 
 .left-panel {
@@ -171,6 +173,7 @@ body {
     flex-wrap: wrap;
     gap: 11px;
     justify-content: space-between;
+    font-size: 15px;
 }
 
 .recipe-item h3 {
@@ -220,6 +223,9 @@ body {
     width: 1109px;
     background-image: url(images/instruct.avif);
     background-size: contain;
+    max-width: 70%;
+    min-width: 70%;
+    font-size: 13px;
 }
 
 .instruction-panel.active {
@@ -262,7 +268,7 @@ body {
     padding: 5px 10px;
     border-radius: 15px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .available-tag:hover {
@@ -280,4 +286,7 @@ body {
     padding: 14px;
     border-radius: 9px;
 }
-/* Initial hidd
+
+#item_name_box{
+    font-size: 13px;
+}
