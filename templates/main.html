@@ -5,22 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Recipe Generation</title>
+    <title>Cook Ease</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 </head>
 
 <body style="background-image: url('static/images/back.jpg');">
+    <div class="site-name"><strong>Cook Ease</strong></div>
     <div class="container">
         <div class="left-panel" style="background-image: url('static/images/image.jpeg');">
             <h2>Vegetable Desk</h2>
-            <p style="color: #ffffff;background-color: #00000029;padding: 8px;margin-bottom: 8px; border-radius: 20px;">Upload a photo to detect vegetables and get recipes!</p>
+            <p style="color: #ffffff;background-color: #00000029;padding: 8px;margin-bottom: 8px; border-radius: 20px;    font-size: 13px;">Upload a photo to detect vegetables and get recipes!</p>
 
             <div class="search-container">
                 <div class="search-input" id="search-input">
                     <div class="tag-container" id="tag-container"></div>
                     <input type="text" id="tag-input" placeholder="Type vegetable..." oninput="showSuggestions()">
+                    <button class="icon-button" onclick="searchTagsFunction()" title="Search">
+                        <i class="fa fa-search" style="font-size:24px"></i>
+                    </button>
                     <button class="icon-button" onclick="document.getElementById('upload-photo').click()" title="Upload or Take Photo">
-                        <i class="fa fa-camera" style="font-size:24px"></i>
+                        <!-- <i class="fa fa-camera" style="font-size:24px"></i> -->
                     </button>
                 </div>
                 <input type="file" id="upload-photo" class="file-input" accept="image/*">
@@ -32,7 +38,7 @@
         </div>
 
         <div class="main-content">
-            <h1>Recipes</h1>
+            <h1 style="font-size: 30px;">Recipes</h1>
             <div class="recipe-list" id="recipe-list"></div>
         </div>
     </div>
@@ -41,11 +47,17 @@
         <button class="back-button" onclick="goBack()">Back to Recipes</button>
         <div id="recipe">
             <h2 id="recipe-name"></h2>
-            <p id="preptime"></p>
-            <p id="serve"></p>
-            <p id="diet"></p>
-            <p id="ingredients"></p>
-            <p id="recipe-instructions"></p>
+            <p id="preptime" style="margin-bottom: 0;"></p>
+            <p id="serve" style="margin-bottom: 0;"></p>
+            <p id="diet" style="margin-bottom: 0;"></p>
+            <p id="ingredients" style="margin-bottom: 10px;"></p>
+            <div class="in_line" style="display: flex;    gap: 17px;"><strong style="font-size: 17px;">Instructions : </strong> <p style="color: #00000058;">     
+                   scroll for more instruction </p></div>
+            
+            <div class="sc_ins">
+            <p id="recipe-instructions" style="overflow-y: auto;"></p>
+            
+        </div>
         </div>
     </div>
 

@@ -4,6 +4,7 @@ const tagContainer = document.getElementById('tag-container');
 const suggestionsContainer = document.getElementById('suggestions-container');
 const availableTagsContainer = document.getElementById('available-tags');
 const recipeList = document.getElementById('recipe-list');
+const button23 = document.getElementById('button23');
 const availableTags = [
     'amaranth', 'apple gourd', 'arugula', 'ash gourd', 'asparagus', 'baby corn', 'bamboo shoot', 'bean', 
     'beetroot', 'bitter gourd', 'bottle gourd', 'brinjal', 'broccoli', 'cabbage', 'capsicum', 'cape gooseberry', 
@@ -17,6 +18,8 @@ const availableTags = [
     'sweet corn', 'sweet potato', 'tamarind', 'taro', 'tendli gourd', 'tomato', 'turnip', 'water chestnut', 'white brinjal', 
     'wild spinach', 'yam'
 ];
+
+
 
 // Generate available tags from vegetable array
 availableTags.forEach(tag => {
@@ -41,8 +44,12 @@ function addTag(tag) {
         tagContainer.appendChild(tagElement);
         searchInput.value = ''; // Clear the input after adding the tag
         suggestionsContainer.style.display = 'none'; // Hide the suggestions after adding the tag
-        searchVegetable(searchTags.join(',')); // Search using the selected tags
+        // searchVegetable(searchTags.join(',')); // Search using the selected tags
     }
+}
+
+function searchTagsFunction(){
+    searchVegetable(searchTags.join(','));
 }
 
 function removeTag(tag, tagElement) {
@@ -50,6 +57,11 @@ function removeTag(tag, tagElement) {
     tagContainer.removeChild(tagElement);
     searchVegetable(searchTags.join(',')); // Update search when a tag is removed
 }
+// button23.addEventListener('click', function() {
+//     const tag = searchInput.value.trim(); // Get the tag from the search input
+//     searchVegetable(searchTags.join(',')); // Search using the selected tags
+
+// });
 
 function showSuggestions() {
     const inputText = searchInput.value.toLowerCase();
@@ -139,7 +151,7 @@ async function showRecipeInstructions(recipe) {
         document.getElementById('diet').innerHTML  = `<strong>Diet Type :</strong> ${data.diet}`;
         document.getElementById('ingredients').innerHTML  = `<strong>Ingredients :</strong> ${data.ingredients}`;
         // Check if instructions are in the correct format and display them
-        document.getElementById('recipe-instructions').innerHTML = `<br><strong>Instructions :</strong><br>${instructions.replace(/\n/g, '<br>')}`;
+        document.getElementById('recipe-instructions').innerHTML = `${instructions.replace(/\n/g, '<br>')}`;
     } else {
         document.getElementById('recipe-name').textContent = 'Recipe not found';
         document.getElementById('recipe-instructions').textContent = 'No instructions available.';

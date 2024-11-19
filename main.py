@@ -25,6 +25,7 @@ async def read_index(request: Request):
 # New route to handle vegetable search
 @app.get("/search/")
 async def search_vegetable(query: str):
+    
     veg = [query.split(',')]
     # print("que = ",query)
     search_re = get_exact_recipes(veg)
