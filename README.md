@@ -54,7 +54,8 @@ The application is live at: [Heroku Link](https://recipe-generation-system-c19e0
 
 2. **Install dependencies**: 
   ```bash
-  pip install -r requirements.txt
+   pip install -r requirements.txt
+
 
 3. **Run the server**:
   ```bash
