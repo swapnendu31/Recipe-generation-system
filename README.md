@@ -53,12 +53,12 @@ The application is live at: [Heroku Link](https://recipe-generation-system-c19e0
    cd recipe-generation-ai
 
 2. **Install dependencies**: 
-  ```bash
+   ```bash
    pip install -r requirements.txt
 
 
 3. **Run the server**:
-  ```bash
+   ```bash
    uvicorn main:app --reload
    ## Open http://127.0.0.1:8000 in your browser.
 
