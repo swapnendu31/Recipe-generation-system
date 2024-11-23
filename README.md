@@ -1,45 +1,53 @@
-<h1 align="center">Hi 👋, I'm Swapnendu Let</h1>
-<h3 align="center">A passionate AI/ML/DL developer and Computer Vision enthusiast from India.</h3>
+# Recipe Generation AI 🍲  
+_A system to generate recipes based on available vegetables using a robust search engine._
 
-🔭 I have worked on **Recipe Generation AI**, a system that generates personalized recipes based on detected vegetables from an image.  
-The project integrates **YOLOv8** for object detection, a **bipartite graph** for matching detected vegetables with recipes, and **Microsoft Semantic Kernel** for transforming instructions into a narrative format.  
-It also includes features like cuisine categorization, calorie information, and an interactive user interface built with **FastAPI** and JavaScript.  
-- 🚀 Deployed on Heroku: [Link](#)  
+## 📚 Overview  
+Recipe Generation AI is a smart application designed to generate recipes using only the vegetables that are available to the user.  
+It features a **robust search engine** built using a **bipartite graph** to match vegetables with recipes and utilizes **Microsoft Semantic Kernel** to deliver narrative-style instructions.  
+The system is user-friendly, providing detailed calorie information and interactive UI components for a seamless experience.
 
-🌱 I’m currently learning **Machine Learning and Deep Learning with Computer Vision.**
+### Key Features:  
+- **Ingredient-Based Recipes**: Generates recipes based on vegetables detected by the user.  
+- **Robust Search Engine**: Matches available vegetables to recipes using a bipartite graph.  
+- **Narrative Instructions**: Transforms recipe steps into narrative-style descriptions using Semantic Kernel.  
+- **Nutritional Info**: Provides calorie details for one serving.  
+- **Interactive UI**: Includes dynamic panels for recipe instructions and details.
 
-👯 I’m looking to collaborate on **Computer Vision projects and exploring Transformer models. Feel free to reach out if you're working on similar domains!**
+---
 
-👨‍💻 All of my projects are available at [https://github.com/swapnendu31](https://github.com/swapnendu31)
+## 👩‍💻 Team  
+- **Swapnendu Let**  
+  - _Role_: Backend Development and Deployment.  
+  - _Contributions_:  
+    - Developed the bipartite graph-based recipe matching system.  
+    - Created the backend using FastAPI.  
+    - Deployed the application on Heroku.  
 
-💬 Ask me about **Artificial Intelligence, Deep Learning, TensorFlow, YOLO, Computer Vision, and integrating AI with web applications.**
+- **[Your Friend's Name]**  
+  - _Role_: Frontend and Semantic Kernel Integration.  
+  - _Contributions_:  
+    - Designed and developed the interactive user interface.  
+    - Integrated Microsoft Semantic Kernel for narrative recipe descriptions.  
+    - Enhanced the system for improved user experience.
 
-📫 How to reach me: **letswapnendu@gmail.com**
+---
 
-📄 Know about my experiences: [https://www.linkedin.com/in/swapnendu-let-040560188/](https://www.linkedin.com/in/swapnendu-let-040560188/)
+## 🚀 Deployment  
+The application is live at: [Heroku Link](#)
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-</p>
+---
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> 
-  <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer"> 
-    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI" width="60" height="45"/> 
-  </a>
-  <a href="https://ultralytics.com/yolov8" target="_blank" rel="noreferrer"> 
-    <img src="https://ultralytics.com/images/yolov8/yolov8-logo.png" alt="YOLOv8" width="60" height="45"/> 
-  </a>
-  <a href="https://flask.palletsprojects.com/" target="_blank" rel="noreferrer"> 
-    <img src="https://flask.palletsprojects.com/en/3.0.x/_images/flask-horizontal.png" alt="Flask" width="60" height="45"/> 
-  </a>
-  <a href="https://www.python.org/" target="_blank" rel="noreferrer"> 
-    <img src="https://www.python.org/static/img/python-logo@2x.png" alt="Python" width="60" height="45"/> 
-  </a>
-  <a href="https://jupyter.org/" target="_blank" rel="noreferrer"> 
-    <img src="https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg" alt="Jupyter" width="60" height="45"/> 
-  </a>
-  <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"> 
-    <img src="https://b2332085.smushcdn.com/2332085/wp-content/uploads/2022/05/heroku-cover.png?lossy=1&strip=1&webp=1" alt="Heroku" width="60" height="45"/> 
-  </a>
-</p>
+## 🛠️ Tech Stack  
+- **Backend**: FastAPI, Python  
+- **Frontend**: JavaScript, HTML, CSS  
+- **Deployment**: Heroku  
+- **AI Tools**: Microsoft Semantic Kernel  
+
+---
+
+## 📂 Setup Instructions  
+
+1. **Clone the repository**:  
+   ```bash
+   git clone https://github.com/your-repo/recipe-generation-ai.git
+   cd recipe-generation-ai
