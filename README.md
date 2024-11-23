@@ -56,7 +56,6 @@ The application is live at: [Heroku Link](https://recipe-generation-system-c19e0
   ```bash
   pip install -r requirements.txt
 
-
 3. **Run the server**:
   ```bash
    uvicorn main:app --reload
